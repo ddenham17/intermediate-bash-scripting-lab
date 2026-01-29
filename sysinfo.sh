@@ -15,14 +15,13 @@ fi
 
 # Title
 echo "==============================="
-echo "    SYSTEM INFO MENU    "
+echo "       SYSTEM INFO MENU       "
 echo "==============================="
 
 # Menu Loop
 while true; do
     echo ""
     echo "Welcome, select one of the following options using the number keys:"
-    echo "Generated on: $(date '+%Y-%m-%d %H:%M:%S')"
     echo "-------------------------------"
     echo "1: Display System Info"
     echo "2: Display Disk Usage"
@@ -36,6 +35,7 @@ while true; do
     # Logic to handle selection using if/elif/else
     if [ "$choice" == "1" ]; then
         echo "--- System Information ---"
+        echo "--- Generated on: $(date '+%Y-%m-%d %H:%M:%S') ---"
         echo "OS Name/Version: $(grep '^PRETTY_NAME=' /etc/os-release | cut -d'=' -f2 | tr -d '\"')"
         echo "Hostname: $(hostname)"
         echo "Kernel Version: $(uname -r)"
@@ -43,14 +43,17 @@ while true; do
 
     elif [ "$choice" == "2" ]; then
         echo "--- Disk Usage ---"
+        echo "--- Generated on: $(date '+%Y-%m-%d %H:%M:%S') ---"
         df -h
 
     elif [ "$choice" == "3" ]; then
         echo "--- Current Logged-In Users & Activities ---"
+        echo "--- Generated on: $(date '+%Y-%m-%d %H:%M:%S') ---"
         w
 
     elif [ "$choice" == "4" ]; then
         echo "--- Top 5 CPU Processes ---"
+        echo "--- Generated on: $(date '+%Y-%m-%d %H:%M:%S') ---"
         echo "+------+------------+---------+--------------+"
         echo "| PID  | User       | CPU%    | Command      |"
         echo "+------+------------+---------+--------------+"
@@ -61,6 +64,7 @@ while true; do
 
     elif [ "$choice" == "5" ]; then
         echo "Exiting the script. Goodbye!"
+        echo "--- Generated on: $(date '+%Y-%m-%d %H:%M:%S') ---"
         exit 0
     else
         echo "Invalid selection! Please run the script again and choose 1-5."
