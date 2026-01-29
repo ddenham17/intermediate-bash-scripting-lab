@@ -4,7 +4,7 @@
 # Check if the script was called with -h or --help
 if [[ "$1" == "-h" || "$1" == "--help" ]]; then
     echo "==============================="
-    echo "    SYSTEM INFO HELP    "
+    echo "       SYSTEM INFO HELP       "
     echo "==============================="
     echo "This script opens a menu that allows you to view various system statistics."
     echo ""
